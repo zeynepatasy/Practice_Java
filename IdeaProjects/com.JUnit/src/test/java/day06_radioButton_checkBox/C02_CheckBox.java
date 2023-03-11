@@ -40,6 +40,7 @@ if (!checkBox2.isSelected()){
     checkBox2.click();
     Thread.sleep(3000);
 }
+//chechbox birden fazla seçim yaptıran buttonlardır
 }
 
 }

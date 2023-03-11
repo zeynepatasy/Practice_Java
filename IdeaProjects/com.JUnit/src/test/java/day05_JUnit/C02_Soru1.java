@@ -3,6 +3,7 @@ package day05_JUnit;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
@@ -17,8 +18,11 @@ public class C02_Soru1 {
         //tarih kısmına "2020-09-10" yazdırın
         //pay butonuna tıklayın
         //"The  payment was successfully submitted" mesajının çıktıgını kontrol edin
+        ChromeOptions ops = new ChromeOptions();
+        ops.addArguments("--remote-allow-origins=*");
+
         WebDriverManager.chromedriver().setup();
-        WebDriver driver=new ChromeDriver();
+        WebDriver driver=new ChromeDriver(ops);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
